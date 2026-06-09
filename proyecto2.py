@@ -3,9 +3,13 @@ import requests
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from dotenv import load_dotenv
+import os
 
-BCRA_TOKEN = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTE2MTkyMTMsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJjYXJvLmNhbmRlbGFtYXJ0aW5hQGdtYWlsLmNvbSJ9.TgLrN2ZOI7BlWiG9qk0GmF0m5iBaGkGDRdr897i-CB1e0FKiqC5i2GzCXaNUS_OGPB5v9IWyBMKgh97ITx7cLA"
-FRED_KEY   = "7af625efe6c4bcc93848631174da493d"
+load_dotenv("token.env")
+
+FRED_KEY = os.getenv("FRED_KEY")
+BCRA_TOKEN = os.getenv("BCRA_TOKEN")
 
 FECHA_INICIO = "2016-12-01"
 FECHA_FIN    = "2024-12-31"
